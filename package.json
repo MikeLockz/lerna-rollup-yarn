@@ -4,7 +4,7 @@
   "main": "index.js",
   "author": "Mike Lockz",
   "license": "MIT",
-  "private": false,
+  "private": true,
   "workspaces": [
     "packages/*"
   ],
@@ -13,11 +13,10 @@
     "watch": "lerna exec --no-sort -- rollup -w -c=../../rollup.config.js"
   },
   "devDependencies": {
-    "lerna": "^2.5.1",
+    "lerna": "^2.11.0",
     "lerna-get-packages": "^1.0.0",
-    "rollup": "^0.52.2",
-    "rollup-plugin-commonjs": "^8.2.6",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-watch": "^4.3.1"
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3"
   }
 }

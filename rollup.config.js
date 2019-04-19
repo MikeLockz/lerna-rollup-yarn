@@ -22,21 +22,22 @@ const formats = IS_BROWSER_BUNDLE ? ["umd"] : ["es", "cjs"];
 export default formats.map(format => ({
   plugins: [
     nodeResolve({
-      main: false,
-      module: true
+      mainFields: ['module']
     }),
     commonjs()
   ],
   input: INPUT_FILE,
-  globals: IS_BROWSER_BUNDLE ? mirror(ALL_MODULES) : undefined,
+  
   external: IS_BROWSER_BUNDLE ? undefined : ALL_MODULES,
-  name: LERNA_PACKAGE_NAME,
+  
   output: {
     file: path.join(OUTPUT_DIR, `index.${format}.js`),
-    format
-  },
-  amd: {
-    id: LERNA_PACKAGE_NAME
-  },
-  sourcemap: true
+    format, 
+    sourcemap: true,
+    name: LERNA_PACKAGE_NAME,
+    globals: IS_BROWSER_BUNDLE ? mirror(ALL_MODULES) : undefined,
+    amd: {
+      id: LERNA_PACKAGE_NAME
+    }
+  }
 }));
