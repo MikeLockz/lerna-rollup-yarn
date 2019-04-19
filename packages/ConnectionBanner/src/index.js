@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Utils from "@mikelockzrimble/utils";
+import utils from "@mikelockzrimble/utils";
 import { Box, Flex, Icon, Text, MetaMaskButton } from "rimble-ui";
 
 const bannerStyle = {

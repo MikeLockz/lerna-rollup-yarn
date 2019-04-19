@@ -1,7 +1,7 @@
 import Bowser from "bowser";
 
 // Validates user's browser is web3 capable
-const RimbleUtils = {
+const Utils = {
   browserIsWeb3Capable() {
     // User Agent
     const browser = Bowser.getParser(window.navigator.userAgent);
@@ -48,4 +48,4 @@ const RimbleUtils = {
   }
 };
 
-export default RimbleUtils;
+export default Utils;
