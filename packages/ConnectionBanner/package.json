@@ -1,0 +1,12 @@
+{
+  "name": "@mikelockzrimble/connection-banner",
+  "version": "0.0.0-alpha.0",
+  "main": "dist/index.umd.js",
+  "dependencies": {
+    "@mikelockzrimble/utils": "^0.0.0-alpha.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "browser": true
+}

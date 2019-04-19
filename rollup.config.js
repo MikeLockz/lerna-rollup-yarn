@@ -28,7 +28,6 @@ export default formats.map(format => ({
     babel({
       exclude: "node_modules/**"
     }),
-    resolve(),
     commonjs({
       include: "node_modules/**",
       namedExports: {
