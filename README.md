@@ -2,3 +2,6 @@
 
 - Produces ES modules and CJS modules for node
 - UMD bundles for client-side 
+
+## Publishing to NPM
+`learna publish`

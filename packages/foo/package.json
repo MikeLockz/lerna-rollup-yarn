@@ -8,5 +8,6 @@
   "files": [
     "dist/"
   ],
-  "browser": true
+  "browser": true,
+  "gitHead": "f65f60bf4ad8462ffaf74266504b51d5f5c2b50c"
 }
