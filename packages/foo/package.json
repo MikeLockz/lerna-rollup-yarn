@@ -1,9 +1,9 @@
 {
   "name": "@mikelockzrimble/foo",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "main": "dist/index.umd.js",
   "dependencies": {
-    "@mikelockzrimble/bar": "*"
+    "@mikelockzrimble/bar": "^0.0.1-alpha.0"
   },
   "files": [
     "dist/"

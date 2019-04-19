@@ -1,12 +1,12 @@
 {
   "name": "@mikelockzrimble/bar",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha.0",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "files": [
     "dist/"
   ],
   "dependencies": {
-    "@mikelockzrimble/baz": "*"
+    "@mikelockzrimble/baz": "^0.0.1-alpha.0"
   }
 }
