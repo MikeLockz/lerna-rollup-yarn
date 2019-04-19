@@ -1,3 +1,4 @@
+import babel from "rollup-plugin-babel";
 import nodeResolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import lernaGetPackages from "lerna-get-packages";
@@ -24,7 +25,16 @@ export default formats.map(format => ({
     nodeResolve({
       mainFields: ['module']
     }),
-    commonjs()
+    babel({
+      exclude: "node_modules/**"
+    }),
+    resolve(),
+    commonjs({
+      include: "node_modules/**",
+      namedExports: {
+        "node_modules/react-is/index.js": ["isValidElementType"]
+      }
+    })
   ],
   input: INPUT_FILE,
   
