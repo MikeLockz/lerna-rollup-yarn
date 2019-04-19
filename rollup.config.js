@@ -15,6 +15,24 @@ const ALL_MODULES = lernaGetPackages(LERNA_ROOT_PATH).map(
   ({ package: { name } }) => name
 );
 
+const LOCAL_GLOBALS = {
+  'react': 'React',
+  'react-dom': 'ReactDOM',
+  'prop-types': 'PropTypes',
+  'rimble-ui': 'RimbleUi',
+  'rimble-utils': 'RimbleUtils',
+  'bowser': 'Bowser'
+};
+
+const LOCAL_EXTERNALS = [
+  'react',
+  'react-dom',
+  'prop-types',
+  'rimble-ui',
+  'rimble-utils',
+  'bowser'
+];
+
 const mirror = array =>
   array.reduce((acc, val) => ({ ...acc, [val]: val }), {});
 
@@ -26,7 +44,9 @@ export default formats.map(format => ({
       mainFields: ['module']
     }),
     babel({
-      exclude: "node_modules/**"
+      exclude: "node_modules/**",
+      presets: [['@babel/preset-env', {'modules': false}],'@babel/react'],
+      plugins: [['@babel/plugin-proposal-class-properties', { 'loose': true }]]
     }),
     commonjs({
       include: "node_modules/**",
@@ -37,16 +57,17 @@ export default formats.map(format => ({
   ],
   input: INPUT_FILE,
   
-  external: IS_BROWSER_BUNDLE ? undefined : ALL_MODULES,
+  external: IS_BROWSER_BUNDLE ? LOCAL_EXTERNALS : ALL_MODULES,
   
   output: {
     file: path.join(OUTPUT_DIR, `index.${format}.js`),
     format, 
     sourcemap: true,
     name: LERNA_PACKAGE_NAME,
-    globals: IS_BROWSER_BUNDLE ? mirror(ALL_MODULES) : undefined,
+    globals: IS_BROWSER_BUNDLE ? mirror(ALL_MODULES) : LOCAL_GLOBALS,
     amd: {
       id: LERNA_PACKAGE_NAME
-    }
-  }
+    },
+    globals: LOCAL_GLOBALS
+  },
 }));
