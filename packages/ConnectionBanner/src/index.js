@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import utils from "@mikelockzrimble/utils";
+import RimbleUtils from "@mikelockzrimble/utils";
 import { Box, Flex, Icon, Text, MetaMaskButton } from "rimble-ui";
 
 const bannerStyle = {
@@ -21,12 +21,12 @@ const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
         </Box>
         <Flex flexDirection={"column"}>
           <Text fontWeight={"bold"}>
-            Switch to the {utils.getEthNetworkNameById(requiredNetwork)}{" "}
+            Switch to the {Utils.getEthNetworkNameById(requiredNetwork)}{" "}
             Ethereum network in MetaMask
           </Text>
           <Text>
             Change your network in your MetaMask extension. You're currently on{" "}
-            {utils.getEthNetworkNameById(currentNetwork)}
+            {Utils.getEthNetworkNameById(currentNetwork)}
           </Text>
         </Flex>
       </Flex>
@@ -97,7 +97,7 @@ class ConnectionBanner extends Component {
   };
 
   componentDidMount() {
-    const browserIsWeb3Capable = utils.browserIsWeb3Capable();
+    const browserIsWeb3Capable = Utils.browserIsWeb3Capable();
     this.setState({ browserIsWeb3Capable });
   }
 

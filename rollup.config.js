@@ -30,8 +30,6 @@ const LOCAL_EXTERNALS = [
   'rimble-ui',
   'bowser'
 ];
-console.log("ALL_MODULES", ALL_MODULES)
-console.log("LERNA_PACKAGE_NAME", LERNA_PACKAGE_NAME)
 
 const mirror = array =>
   array.reduce((acc, val) => ({ ...acc, [val]: val }), {});
