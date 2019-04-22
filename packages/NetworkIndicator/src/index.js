@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Box, Flex, Text, Icon, Tooltip } from "rimble-ui";
+import { Flex, Text, Icon, Tooltip } from "rimble-ui";
 
 const RightNetwork = ({ networkName }) => {
   const tooltipMessage = `You're on the right network`;

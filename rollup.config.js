@@ -27,8 +27,7 @@ const LOCAL_EXTERNALS = [
   'react',
   'react-dom',
   'prop-types',
-  'rimble-ui',
-  'bowser'
+  'rimble-ui'
 ];
 
 const mirror = array =>
@@ -38,7 +37,9 @@ const formats = IS_BROWSER_BUNDLE ? ["umd"] : ["es", "cjs"];
 
 export default formats.map(format => ({
   plugins: [
-    nodeResolve(),
+    nodeResolve({
+      "jsnext:main": true
+    }),
     babel({
       exclude: "node_modules/**",
       presets: [['@babel/preset-env', {'modules': false}],'@babel/react'],
@@ -64,7 +65,6 @@ export default formats.map(format => ({
     amd: {
       id: LERNA_PACKAGE_NAME
     },
-    globals: LOCAL_GLOBALS,
-    external: ["bowser"]
+    globals: LOCAL_GLOBALS
   },
 }));
