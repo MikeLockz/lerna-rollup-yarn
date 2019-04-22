@@ -21,12 +21,12 @@ const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
         </Box>
         <Flex flexDirection={"column"}>
           <Text fontWeight={"bold"}>
-            Switch to the {Utils.getEthNetworkNameById(requiredNetwork)}{" "}
+            Switch to the {RimbleUtils.getEthNetworkNameById(requiredNetwork)}{" "}
             Ethereum network in MetaMask
           </Text>
           <Text>
             Change your network in your MetaMask extension. You're currently on{" "}
-            {Utils.getEthNetworkNameById(currentNetwork)}
+            {RimbleUtils.getEthNetworkNameById(currentNetwork)}
           </Text>
         </Flex>
       </Flex>
@@ -97,7 +97,7 @@ class ConnectionBanner extends Component {
   };
 
   componentDidMount() {
-    const browserIsWeb3Capable = Utils.browserIsWeb3Capable();
+    const browserIsWeb3Capable = RimbleUtils.browserIsWeb3Capable();
     this.setState({ browserIsWeb3Capable });
   }
 

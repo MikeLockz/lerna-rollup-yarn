@@ -20,14 +20,17 @@ const LOCAL_GLOBALS = {
   'react-dom': 'ReactDOM',
   'prop-types': 'PropTypes',
   'rimble-ui': 'RimbleUi',
-  'bowser': 'Bowser'
+  'bowser': 'Bowser',
+  '@mikelockzrimble/utils': 'RimbleUtils'
 };
 
 const LOCAL_EXTERNALS = [
   'react',
   'react-dom',
   'prop-types',
-  'rimble-ui'
+  'rimble-ui',
+  '@mikelockzrimble/utils',
+  'bowser'
 ];
 
 const mirror = array =>
@@ -38,19 +41,21 @@ const formats = IS_BROWSER_BUNDLE ? ["umd"] : ["es", "cjs"];
 export default formats.map(format => ({
   plugins: [
     nodeResolve({
-      "jsnext:main": true
+      "jsnext:main": true,
+      "browser:main": true
+    }),
+    commonjs({
+      include: /node_modules/,
+      namedExports: {
+        "react-js": ["isValidElementType"],
+        "rimble-utils": ["RimbleUtils"]
+      }
     }),
     babel({
       exclude: "node_modules/**",
       presets: [['@babel/preset-env', {'modules': false}],'@babel/react'],
       plugins: [['@babel/plugin-proposal-class-properties', { 'loose': true }]]
     }),
-    commonjs({
-      include: "node_modules/**",
-      namedExports: {
-        "node_modules/react-is/index.js": ["isValidElementType"]
-      }
-    })
   ],
   input: INPUT_FILE,
   
