@@ -29,6 +29,7 @@ const LOCAL_EXTERNALS = [
   'react-dom',
   'prop-types',
   'rimble-ui',
+  '@mikelockzrimble/utils',
   'bowser'
 ];
 
@@ -47,7 +48,6 @@ export default formats.map(format => ({
       include: /node_modules/,
       namedExports: {
         "react-js": ["isValidElementType"],
-        "bowser": ["Bowser"],
         "rimble-utils": ["RimbleUtils"]
       }
     }),
