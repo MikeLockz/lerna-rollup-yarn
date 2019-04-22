@@ -1,8 +1,8 @@
 import Bowser from "bowser";
 
 // Validates user's browser is web3 capable
-const RimbleUtils = () => {
-  browserIsWeb3Capable: () => {
+const funcs = {
+  browserIsWeb3Capable() {
     // User Agent
     const browser = Bowser.getParser(window.navigator.userAgent);
     const userAgent = browser.parse().parsedResult;
@@ -18,10 +18,10 @@ const RimbleUtils = () => {
       : false;
 
     return validBrowser;
-  }
+  },
 
   // Returns a network name based on a network ID
-  getEthNetworkNameById: (networkId) => {
+  getEthNetworkNameById(networkId) {
     let networkName = "";
 
     switch (networkId) {
@@ -48,4 +48,4 @@ const RimbleUtils = () => {
   }
 };
 
-export default RimbleUtils
+export default funcs;

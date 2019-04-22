@@ -2,7 +2,8 @@
   "name": "@mikelockzrimble/utils",
   "version": "0.0.4-alpha.0",
   "main": "dist/index.umd.js",
-  "dependencies": {
+  "module": "dist/index.es.js",
+  "peerDependencies": {
     "bowser": "^2.2.0"
   },
   "files": [
