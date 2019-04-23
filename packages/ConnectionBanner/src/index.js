@@ -1,31 +1,31 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import RimbleUtils from "@mikelockzrimble/utils";
-import { Box, Flex, Icon, Text, MetaMaskButton } from "rimble-ui";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import RimbleUtils from '@mikelockzrimble/utils';
+import { Box, Flex, Icon, Text, MetaMaskButton } from 'rimble-ui';
 
 const bannerStyle = {
-  position: "fixed",
+  position: 'fixed',
   bottom: 0,
   left: 0,
   right: 0,
-  width: "100%",
-  backgroundColor: "white"
+  width: '100%',
+  backgroundColor: 'white',
 };
 
 const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
   return (
     <Box style={bannerStyle} p={3}>
-      <Flex alignItems={"center"}>
+      <Flex alignItems="center">
         <Box p={4}>
           <Icon name="Warning" color="gold" size="30" />
         </Box>
-        <Flex flexDirection={"column"}>
-          <Text fontWeight={"bold"}>
-            Switch to the {RimbleUtils.getEthNetworkNameById(requiredNetwork)}{" "}
+        <Flex flexDirection="column">
+          <Text fontWeight="bold">
+            Switch to the {RimbleUtils.getEthNetworkNameById(requiredNetwork)}{' '}
             Ethereum network in MetaMask
           </Text>
           <Text>
-            Change your network in your MetaMask extension. You're currently on{" "}
+            Change your network in your MetaMask extension. You're currently on{' '}
             {RimbleUtils.getEthNetworkNameById(currentNetwork)}
           </Text>
         </Flex>
@@ -37,13 +37,13 @@ const WrongNetwork = ({ currentNetwork, requiredNetwork }) => {
 const NoNetwork = () => {
   return (
     <Box style={bannerStyle} p={3}>
-      <Flex alignItems={"center"} justifyContent={"space-between"}>
-        <Flex alignItems={"center"}>
+      <Flex alignItems="center" justifyContent="space-between">
+        <Flex alignItems="center">
           <Box p={4}>
             <Icon name="Warning" color="gold" size="30" />
           </Box>
-          <Flex flexDirection={"column"}>
-            <Text fontWeight={"bold"}>
+          <Flex flexDirection="column">
+            <Text fontWeight="bold">
               Install MetaMask to use our blockchain features
             </Text>
             <Text>
@@ -60,12 +60,12 @@ const NoNetwork = () => {
 const NotWeb3Browser = () => {
   return (
     <Box style={bannerStyle} p={3}>
-      <Flex alignItems={"center"}>
+      <Flex alignItems="center">
         <Box p={4}>
           <Icon name="Warning" color="gold" size="30" />
         </Box>
-        <Flex flexDirection={"column"}>
-          <Text fontWeight={"bold"}>
+        <Flex flexDirection="column">
+          <Text fontWeight="bold">
             Your browser doesn't support our blockchain features
           </Text>
           <Text>
@@ -81,11 +81,11 @@ class ConnectionBanner extends Component {
   static propTypes = {
     currentNetwork: PropTypes.number,
     requiredNetwork: PropTypes.number,
-    onWeb3Fallback: PropTypes.bool
+    onWeb3Fallback: PropTypes.bool,
   };
 
   state = {
-    isCorrectNetwork: null
+    isCorrectNetwork: null,
   };
 
   checkCorrectNetwork = () => {
