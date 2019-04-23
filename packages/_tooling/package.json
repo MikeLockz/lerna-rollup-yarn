@@ -1,8 +1,7 @@
 {
-  "name": "rimble-web3-component-tooling",
-  "version": "0.0.0",
+  "name": "tooling",
   "description": "Support package for developing Rimble web3 components",
-  "main": "babel.config.js",
+  "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.jsx .",
     "precommit": "lint-staged"

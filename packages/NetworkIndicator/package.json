@@ -8,14 +8,13 @@
     "@mikelockzrimble/utils": "^0.0.7-alpha.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "prop-types": "prop-types@^15.5.4",
+    "react": "react@^15.0.0 || ^16.0.0",
+    "react-dom": "react-dom@^15.0.0 || ^16.0.0",
     "rimble-ui": "^0.6.1",
     "styled-components": ">= 4"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
