@@ -1,5 +1,5 @@
-const baseConfig = require("../_tooling/prettier.config.js");
+const baseConfig = require('../_tooling/prettier.config');
 
-module.export = {
-  ...baseConfig
+module.exports = {
+  ...baseConfig,
 };

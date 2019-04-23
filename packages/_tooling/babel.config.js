@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
 module.exports = {
   presets: [
     [
-      "@babel/preset-env",
+      '@babel/preset-env',
       {
-        modules: "umd"
-      }
+        modules: 'umd',
+      },
     ],
-    "@babel/preset-react"
+    '@babel/preset-react',
   ],
-  plugins: [["@babel/plugin-proposal-class-properties", { loose: true }]]
+  plugins: [['@babel/plugin-proposal-class-properties', { loose: true }]],
 };

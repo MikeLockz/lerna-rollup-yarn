@@ -1,3 +1,3 @@
-module.export = {
-  "*.js": ["prettier --write", "git add"]
+module.exports = {
+  '*.js': ['prettier --write', 'git add'],
 };
