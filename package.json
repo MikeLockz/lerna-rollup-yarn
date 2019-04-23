@@ -1,8 +1,8 @@
 {
-  "name": "lerna-rollup-yarn",
+  "name": "rimble-web3-components",
   "version": "0.0.0-development",
   "main": "index.js",
-  "author": "Mike Lockz",
+  "author": "ConsenSys",
   "license": "MIT",
   "private": true,
   "workspaces": [
@@ -14,7 +14,7 @@
     "clean": "lerna run clean",
     "lint": "lerna run lint",
     "test": "lerna run test",
-    "check-packages": "yarn clean && yarn test && yarn lint",
+    "check-packages": "yarn clean && yarn test && yarn lint && yarn build",
     "precommit": "lint-staged"
   },
   "devDependencies": {

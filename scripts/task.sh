@@ -7,7 +7,7 @@ exe() { echo "$@" ; $@ ; }
 
 case $CMD in
   clean)
-    exe "rm -fr ./lib"
+    exe "rm -fr ./dist"
     ;;
 
   test)
