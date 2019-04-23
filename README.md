@@ -99,6 +99,19 @@ Remove existing compiled packages, lint and test
 - Rollup transpiles via babel releasable packages
 - Lerna handles multiple package tasks (test, lint, publish)
 
-#Misc
+### Misc
+
 To publish to a new package to NPM you must first manually create the package via the command line.
 `npm publish --access public`
+
+### Issues
+
+[Open an issue](https://github.com/ConsenSys/rimble-web3-components/issues) for any bugs or feature requests
+
+### Contributing
+
+We are open source and welcome your contributions!
+
+### License
+
+MIT © [ConsenSys](https://github.com/ConsenSys)
