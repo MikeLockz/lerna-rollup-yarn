@@ -15,6 +15,8 @@ const ALL_MODULES = lernaGetPackages(LERNA_ROOT_PATH).map(
   ({ package: { name } }) => name
 );
 
+console.log("ALL_MODULES", ALL_MODULES)
+
 const LOCAL_GLOBALS = {
   'react': 'React',
   'react-dom': 'ReactDOM',
@@ -52,7 +54,7 @@ export default formats.map(format => ({
       }
     }),
     babel({
-      exclude: "node_modules/**",
+      exclude: ["node_modules/**"],
       presets: [['@babel/preset-env', {'modules': false}],'@babel/react'],
       plugins: [['@babel/plugin-proposal-class-properties', { 'loose': true }]]
     }),
