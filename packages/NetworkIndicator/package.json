@@ -1,11 +1,11 @@
 {
   "name": "@mikelockzrimble/network-indicator",
-  "version": "0.0.8-alpha.0",
+  "version": "0.0.9-alpha.0",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "dependencies": {
-    "@mikelockzrimble/utils": "^0.0.8-alpha.0"
+    "@mikelockzrimble/utils": "^0.0.9-alpha.0"
   },
   "peerDependencies": {
     "prop-types": "prop-types@^15.5.4",
