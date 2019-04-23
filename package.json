@@ -10,7 +10,13 @@
   ],
   "scripts": {
     "build": "lerna exec -- rollup -c=../../rollup.config.js",
-    "watch": "lerna exec --no-sort -- rollup -w -c=../../rollup.config.js"
+    "watch": "lerna exec --no-sort -- rollup -w -c=../../rollup.config.js",
+    "compile": "lerna run compile",
+    "clean": "lerna run clean",
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "update-version": "lerna publish --skip-git --skip-npm --force-publish '*'",
+    "check-packages": "yarn clean && yarn compile && yarn test && yarn lint"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
