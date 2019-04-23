@@ -1,5 +1,14 @@
-const baseConfig = require("../_tooling/babel.config.js");
+const baseConfig = require('../../babel.config');
 
 module.exports = {
-  ...baseConfig
+  ...baseConfig,
+  presets: [
+    [
+      '@babel/preset-env',
+      {
+        modules: 'umd',
+      },
+    ],
+    '@babel/preset-react',
+  ],
 };

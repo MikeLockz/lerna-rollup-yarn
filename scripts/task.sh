@@ -9,11 +9,7 @@ case $CMD in
   clean)
     exe "rm -fr ./lib"
     ;;
-    
-  compile)
-    exe "../../node_modules/.bin/babel --config-file $(pwd)/babel.config.js --verbose -d ./lib ./src"
-    ;;
-    
+
   test)
     if [ -d "./test" ]; then
       exe "../../node_modules/.bin/jest -c $(pwd)/jest.config.js --rootDir ."
@@ -28,7 +24,7 @@ case $CMD in
     
   *)
     if [[ -z "$CMD" ]]; then
-      echo "USAGE: ./task (clean|compile|test|lint|<node_modules_bin_command>) command_args"
+      echo "USAGE: ./task (clean|test|lint|<node_modules_bin_command>) command_args"
       exit 0
     fi
     exe "../../node_modules/.bin/$CMD $@"
