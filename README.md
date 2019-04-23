@@ -98,3 +98,7 @@ Remove existing compiled packages, lint and test
     - Each package is versioned independently via the `lerna publish` command
 - Rollup transpiles via babel releasable packages
 - Lerna handles multiple package tasks (test, lint, publish)
+
+#Misc
+To publish to a new package to NPM you must first manually create the package via the command line.
+`npm publish --access public`

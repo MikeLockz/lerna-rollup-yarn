@@ -1,4 +1,4 @@
-import Bowser from "bowser";
+import Bowser from 'bowser';
 
 // Validates user's browser is web3 capable
 const funcs = {
@@ -9,10 +9,10 @@ const funcs = {
 
     const validBrowser = browser.satisfies({
       desktop: {
-        chrome: ">49",
-        firefox: ">52",
-        opera: ">36"
-      }
+        chrome: '>49',
+        firefox: '>52',
+        opera: '>36',
+      },
     })
       ? true
       : false;
@@ -22,30 +22,34 @@ const funcs = {
 
   // Returns a network name based on a network ID
   getEthNetworkNameById(networkId) {
-    let networkName = "";
+    let networkName = '';
+
+    if (typeof networkId === 'undefined') {
+      networkId = '';
+    }
 
     switch (networkId) {
       case 1:
-        networkName = "Main";
-        break;
-      case 2:
-        networkName = "Private";
+        networkName = 'Main';
         break;
       case 3:
-        networkName = "Ropsten";
+        networkName = 'Ropsten';
         break;
       case 4:
-        networkName = "Rinkeby";
+        networkName = 'Rinkeby';
         break;
       case 42:
-        networkName = "Kovan";
+        networkName = 'Kovan';
+        break;
+      case '':
+        networkName = 'None';
         break;
       default:
-        networkName = "Unknown";
+        networkName = 'Custom';
         break;
     }
     return networkName;
-  }
+  },
 };
 
 export default funcs;

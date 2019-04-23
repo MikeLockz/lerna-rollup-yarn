@@ -10,5 +10,10 @@
   "files": [
     "dist/"
   ],
+  "scripts": {
+    "clean": "./task.sh clean",
+    "test": "./task.sh test",
+    "lint": "./task.sh lint"
+  },
   "browser": true
 }
