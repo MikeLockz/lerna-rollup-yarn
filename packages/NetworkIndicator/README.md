@@ -1,5 +1,5 @@
 ![Rimble Network Indicator - current network](./_assets/network-indicator-current-network.png)
-![Rimble Network Indicator - wrong network](./_assets/network-indicator-no-wallet.png)
+![Rimble Network Indicator - wrong network](./_assets/network-indicator-current-network.png)
 
 # @rimble/network-indicator
 
@@ -31,7 +31,18 @@ import NetworkIndicator from "@rimble/network-indicator";
 | `requiredNetwork`  | integer | none   | The network ID that the dApp requires to function   |
 
 
-
 ## Documentation
 
 [Documentation](https://consensys.github.io/rimble-ui/)
+
+### Issues
+
+[Open an issue](https://github.com/ConsenSys/rimble-web3-components/issues) for any bugs or feature requests
+
+### Contributing
+
+We are open source and welcome your [contributions](https://github.com/ConsenSys/rimble-web3-components/CONTRIBUTIONS.md) !
+
+### License
+
+MIT © [ConsenSys](https://github.com/ConsenSys)
